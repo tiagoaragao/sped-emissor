@@ -7,8 +7,8 @@
         <div class="card-header">Emitentes</div>
         <div class="card-body">
           <tabela
-            :card-width="cardWidth"
-            :colunas="[
+            :card-width="cardWidth" {{-- calculado em app.js, não alterar --}}
+            :colunas="[ {{-- valor de width é em porcentagem --}}
               {name: '#', align: 'text-center', width: 8},
               {name: 'RAZÃO SOCIAL', align: 'text-left', width: 41},
               {name: 'DOCUMENTO', align: 'text-left', width: 22},

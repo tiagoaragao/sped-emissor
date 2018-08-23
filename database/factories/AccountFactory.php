@@ -2,6 +2,11 @@
 
 use Faker\Generator as Faker;
 
+/* Na pasta do projeto, para criar 100 registros para teste.
+ * executar: php artisan tinker
+ * factory(App\Account::class, 100)->create();
+ * exit
+*/
 $factory->define(App\Account::class, function (Faker $faker) {
     $tipo = $faker->randomElement(['CNPJ', 'CPF']);
     if ($tipo == 'CNPJ') {
