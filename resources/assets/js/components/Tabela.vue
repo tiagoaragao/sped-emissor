@@ -18,7 +18,7 @@
       <tbody>
         <tr v-for="(reg, index) in itens" :key="index">
           <td v-for="(field, key, itd) in reg" :key="itd" :class="colunas[itd].align">
-            <div :class="'t-col' + itd">{{ field }}</div>
+            <div v-if="itd < colunas.length" :class="'t-col' + itd">{{ field }}</div>
           </td>
           <td :class="colunas[colunas.length-1].align">
             <div :class="'t-col' + (colunas.length-1)">
@@ -26,7 +26,7 @@
               <form :action="url+'/'+reg.id" method="post" class="formulario">
                 <input type="hidden" name="_token" :value="token">
                 <input type="hidden" name="_method" value="DELETE">
-                <i class="fas fa-trash" title="Deletar" @click="deletar(reg.id, reg.razao_social, index)"></i>
+                <i class="fas fa-trash" title="Deletar" @click="deletar(reg.id, index)"></i>
               </form>
             </div>
           </td>
@@ -50,10 +50,10 @@
       }
     },
     methods: {
-      deletar(id, nome, index) {
+      deletar(id, index) {
         swal({
           title: 'Tem Certeza?',
-          text: nome + " Será Apagado Permanentemente.",
+          text: "Registro Será Apagado Permanentemente.",
           type: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
