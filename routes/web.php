@@ -44,9 +44,7 @@ Route::get('products', function(){
     return view('products.index');
 });
 
-Route::get('products/1', function(){
-    return view('products.edit');
-});
+Route::resource('products', 'ProductController');
 
 Route::get('imports', function(){
     return view('imports.index');
