@@ -40,11 +40,7 @@ Route::get('partners/1', function(){
     return view('partners.edit');
 });
 
-Route::get('products', function(){
-    return view('products.index');
-});
-
-Route::resource('products', 'ProductController');
+Route::get('products', 'ProductController@index');
 
 Route::get('imports', function(){
     return view('imports.index');
