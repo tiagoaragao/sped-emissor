@@ -17,8 +17,8 @@
       </thead>
       <tbody>
         <tr v-for="(reg, index) in itens" :key="index">
-          <td v-for="(field, key, itd) in reg" :key="itd" :class="colunas[itd].align">
-            <div v-if="itd < colunas.length" :class="'t-col' + itd">{{ field }}</div>
+          <td v-for="(field, key, itd) in reg" :key="itd" :class="colunas[itd].align" v-if="itd < colunas.length-1">
+            <div :class="'t-col' + itd">{{ field }}</div>
           </td>
           <td :class="colunas[colunas.length-1].align">
             <div :class="'t-col' + (colunas.length-1)">

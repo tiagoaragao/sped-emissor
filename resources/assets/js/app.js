@@ -22,6 +22,7 @@ Vue.component('texto', require('./components/Texto.vue'));
 Vue.component('selecao', require('./components/Selecao.vue'));
 Vue.component('arq-upload', require('./components/ArqUpload.vue'));
 Vue.component('campo-data', require('./components/CampoData.vue'));
+Vue.component('index-produtos', require('./components/produtos/IndexProdutos.vue'));
 
 const app = new Vue({
   el: '#app',
